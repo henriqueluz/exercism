@@ -51,27 +51,27 @@ describe('Triangle', () => {
     expect(triangle.kind()).toEqual('scalene');
   });
 
-  xtest('test triangles with no size are illegal', () => {
+  test('test triangles with no size are illegal', () => {
     const triangle = new Triangle(0, 0, 0);
     expect(triangle.kind.bind(triangle)).toThrow();
   });
 
-  xtest('triangles with negative sides are illegal', () => {
+  test('triangles with negative sides are illegal', () => {
     const triangle = new Triangle(3, 4, -5);
     expect(triangle.kind.bind(triangle)).toThrow();
   });
 
-  xtest('triangles violating triangle inequality are illegal', () => {
+  test('triangles violating triangle inequality are illegal', () => {
     const triangle = new Triangle(1, 1, 3);
     expect(triangle.kind.bind(triangle)).toThrow();
   });
 
-  xtest('triangles violating triangle inequality are illegal 2', () => {
+  test('triangles violating triangle inequality are illegal 2', () => {
     const triangle = new Triangle(7, 3, 2);
     expect(triangle.kind.bind(triangle)).toThrow();
   });
 
-  xtest('triangles violating triangle inequality are illegal 3', () => {
+  test('triangles violating triangle inequality are illegal 3', () => {
     const triangle = new Triangle(10, 1, 3);
     expect(triangle.kind.bind(triangle)).toThrow();
   });
