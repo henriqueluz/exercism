@@ -10,14 +10,7 @@ const raiseIfNumberIsNotPositive = (n) => {
 }
 
 const collatz = (n) => {
-  let value = n;
-  if (n % 2 == 0) {
-    value = n / 2;
-  } else {
-    value = 3 * n + 1;
-  }
-
-  return value;
+  return n % 2 == 0 ? n / 2 : 3 * n + 1;
 }
 
 export const steps = (n) => {
