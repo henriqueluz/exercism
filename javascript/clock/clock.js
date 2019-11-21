@@ -3,9 +3,16 @@
 // convenience to get you started writing code faster.
 //
 
+const MIDNIGHT_HOUR = 24;
+
+const rollOverHour = (hour) => {
+  const rolledHour = hour > MIDNIGHT_HOUR ? hour % MIDNIGHT_HOUR : hour;
+  return rolledHour === MIDNIGHT_HOUR ? 0 : rolledHour;
+}
+
 export class Clock {
   constructor(hour, minutes = 0) {
-    this.hour = hour;
+    this.hour = rollOverHour(hour);
     this.minutes = minutes;
   }
 
@@ -16,7 +23,7 @@ export class Clock {
   }
 
   plus() {
-    throw new Error('Remove this statement and implement this function');
+
   }
 
   minus() {
@@ -26,4 +33,5 @@ export class Clock {
   equals() {
     throw new Error('Remove this statement and implement this function');
   }
+
 }
