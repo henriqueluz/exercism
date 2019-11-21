@@ -58,23 +58,23 @@ describe('Clock', () => {
       expect(new Clock(-91, 0).toString()).toEqual('05:00');
     });
 
-    xtest('negative minutes', () => {
+    test('negative minutes', () => {
       expect(new Clock(1, -40).toString()).toEqual('00:20');
     });
 
-    xtest('negative minutes rolls over', () => {
+    test('negative minutes rolls over', () => {
       expect(new Clock(1, -160).toString()).toEqual('22:20');
     });
 
-    xtest('negative minutes rolls over continuously', () => {
+    test('negative minutes rolls over continuously', () => {
       expect(new Clock(1, -4820).toString()).toEqual('16:40');
     });
 
-    xtest('negative hour and minutes both roll over', () => {
+    test('negative hour and minutes both roll over', () => {
       expect(new Clock(-25, -160).toString()).toEqual('20:20');
     });
 
-    xtest('negative hour and minutes both roll over continuously', () => {
+    test('negative hour and minutes both roll over continuously', () => {
       expect(new Clock(-121, -5810).toString()).toEqual('22:10');
     });
 
@@ -169,39 +169,39 @@ describe('Clock', () => {
         expect(new Clock(22, 40).equals(new Clock(-2, 40))).toBeTruthy();
       });
 
-      xtest('clocks with negative hour that wraps', () => {
+      test('clocks with negative hour that wraps', () => {
         expect(new Clock(17, 3).equals(new Clock(-31, 3))).toBeTruthy();
       });
 
-      xtest('clocks with negative hour that wraps multiple times', () => {
+      test('clocks with negative hour that wraps multiple times', () => {
         expect(new Clock(13, 49).equals(new Clock(-83, 49))).toBeTruthy();
       });
 
-      xtest('clocks with minute overflow', () => {
+      test('clocks with minute overflow', () => {
         expect(new Clock(0, 1).equals(new Clock(0, 1441))).toBeTruthy();
       });
 
-      xtest('clocks with minute overflow by several days', () => {
+      test('clocks with minute overflow by several days', () => {
         expect(new Clock(2, 2).equals(new Clock(2, 4322))).toBeTruthy();
       });
 
-      xtest('clocks with negative minute', () => {
+      test('clocks with negative minute', () => {
         expect(new Clock(2, 40).equals(new Clock(3, -20))).toBeTruthy();
       });
 
-      xtest('clocks with negative minute that wraps', () => {
+      test('clocks with negative minute that wraps', () => {
         expect(new Clock(4, 10).equals(new Clock(5, -1490))).toBeTruthy();
       });
 
-      xtest('clocks with negative minute that wraps multiple times', () => {
+      test('clocks with negative minute that wraps multiple times', () => {
         expect(new Clock(6, 15).equals(new Clock(6, -4305))).toBeTruthy();
       });
 
-      xtest('clocks with negative hours and minutes', () => {
+      test('clocks with negative hours and minutes', () => {
         expect(new Clock(7, 32).equals(new Clock(-12, -268))).toBeTruthy();
       });
 
-      xtest('clocks with negative hours and minutes that wrap', () => {
+      test('clocks with negative hours and minutes that wrap', () => {
         expect(new Clock(18, 7).equals(new Clock(-54, -11513))).toBeTruthy();
       });
     });

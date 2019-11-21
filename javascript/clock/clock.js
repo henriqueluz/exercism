@@ -31,7 +31,7 @@ export class Clock {
     return this.toString() === clock.toString();
   }
 
- rollOverHour(hour) {
+  rollOverHour(hour) {
     const absoluteHour = Math.abs(hour);
     const extraHour = absoluteHour > MIDNIGHT_HOUR ? absoluteHour % MIDNIGHT_HOUR : absoluteHour;
     const rolledHour = extraHour === MIDNIGHT_HOUR ? 0 : extraHour;
@@ -39,10 +39,17 @@ export class Clock {
     return hour < 0 ? MIDNIGHT_HOUR - rolledHour : rolledHour;
   }
 
- rollOverMinutes(minutes) {
+  rollOverMinutes(minutes) {
+    const absoluteMinutes = this.getAbsoluteMinutes(minutes);
+    return minutes < 0 ? MINUTES_IN_A_HOUR - absoluteMinutes : absoluteMinutes;
+  }
+
+  getAbsoluteMinutes(minutes) {
     const absoluteMinutes = Math.abs(minutes);
-    if (absoluteMinutes >= MINUTES_IN_A_HOUR) {
-      const extraHour = Math.floor(absoluteMinutes / MINUTES_IN_A_HOUR);
+    if (absoluteMinutes >= MINUTES_IN_A_HOUR || minutes < 0) {
+      const extraHour = minutes > 0 ?
+                          Math.floor(minutes / MINUTES_IN_A_HOUR) :
+                          Math.ceil(minutes / MINUTES_IN_A_HOUR) - 1;
       this.hour = this.rollOverHour(this.hour + extraHour);
       return absoluteMinutes % MINUTES_IN_A_HOUR;
     }
