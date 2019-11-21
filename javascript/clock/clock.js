@@ -19,6 +19,8 @@ export class Clock {
   }
 
   plus(minutes) {
+    this.minutes = this.rollOverMinutes(this.minutes + minutes);
+    return this;
   }
 
   minus() {

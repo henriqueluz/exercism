@@ -79,35 +79,35 @@ describe('Clock', () => {
     });
 
     describe('Adding and subtracting minutes', () => {
-      xtest('add minutes', () => {
+      test('add minutes', () => {
         expect(new Clock(10, 0).plus(3).toString()).toEqual('10:03');
       });
 
-      xtest('add no minutes', () => {
+      test('add no minutes', () => {
         expect(new Clock(6, 41).plus(0).toString()).toEqual('06:41');
       });
 
-      xtest('add to next hour', () => {
+      test('add to next hour', () => {
         expect(new Clock(0, 45).plus(40).toString()).toEqual('01:25');
       });
 
-      xtest('add more than one hour', () => {
+      test('add more than one hour', () => {
         expect(new Clock(10, 0).plus(61).toString()).toEqual('11:01');
       });
 
-      xtest('add more than two hours with carry', () => {
+      test('add more than two hours with carry', () => {
         expect(new Clock(0, 45).plus(160).toString()).toEqual('03:25');
       });
 
-      xtest('add across midnight', () => {
+      test('add across midnight', () => {
         expect(new Clock(23, 59).plus(2).toString()).toEqual('00:01');
       });
 
-      xtest('add more than one day (1500 min = 25 hrs)', () => {
+      test('add more than one day (1500 min = 25 hrs)', () => {
         expect(new Clock(5, 32).plus(1500).toString()).toEqual('06:32');
       });
 
-      xtest('add more than two days', () => {
+      test('add more than two days', () => {
         expect(new Clock(1, 1).plus(3500).toString()).toEqual('11:21');
       });
 
