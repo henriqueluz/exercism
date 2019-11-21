@@ -40,13 +40,14 @@ export class Clock {
   }
 
  rollOverMinutes(minutes) {
-    if (minutes >= MINUTES_IN_A_HOUR) {
-      const extraHour = Math.floor(minutes / MINUTES_IN_A_HOUR);
+    const absoluteMinutes = Math.abs(minutes);
+    if (absoluteMinutes >= MINUTES_IN_A_HOUR) {
+      const extraHour = Math.floor(absoluteMinutes / MINUTES_IN_A_HOUR);
       this.hour = this.rollOverHour(this.hour + extraHour);
-      return minutes % MINUTES_IN_A_HOUR;
+      return absoluteMinutes % MINUTES_IN_A_HOUR;
     }
 
-    return minutes;
+    return absoluteMinutes;
   }
 
 }
