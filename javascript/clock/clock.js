@@ -4,16 +4,12 @@
 //
 
 const MIDNIGHT_HOUR = 24;
-
-const rollOverHour = (hour) => {
-  const rolledHour = hour > MIDNIGHT_HOUR ? hour % MIDNIGHT_HOUR : hour;
-  return rolledHour === MIDNIGHT_HOUR ? 0 : rolledHour;
-}
+const MINUTES_IN_A_HOUR = 60;
 
 export class Clock {
   constructor(hour, minutes = 0) {
-    this.hour = rollOverHour(hour);
-    this.minutes = minutes;
+    this.hour = this.rollOverHour(hour);
+    this.minutes = this.rollOverMinutes(minutes);
   }
 
   toString() {
@@ -23,7 +19,6 @@ export class Clock {
   }
 
   plus() {
-
   }
 
   minus() {
@@ -32,6 +27,21 @@ export class Clock {
 
   equals() {
     throw new Error('Remove this statement and implement this function');
+  }
+
+ rollOverHour(hour) {
+    const rolledHour = hour > MIDNIGHT_HOUR ? hour % MIDNIGHT_HOUR : hour;
+    return rolledHour === MIDNIGHT_HOUR ? 0 : rolledHour;
+  }
+
+ rollOverMinutes(minutes) {
+    if (minutes >= MINUTES_IN_A_HOUR) {
+      const extraHour = Math.floor(minutes / MINUTES_IN_A_HOUR);
+      this.hour = this.rollOverHour(this.hour + extraHour);
+      return minutes % MINUTES_IN_A_HOUR;
+    }
+
+    return minutes;
   }
 
 }
