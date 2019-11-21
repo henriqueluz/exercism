@@ -18,20 +18,23 @@ export class Clock {
     return `${padHour}:${padMinutes}`;
   }
 
-  plus() {
+  plus(minutes) {
   }
 
   minus() {
     throw new Error('Remove this statement and implement this function');
   }
 
-  equals() {
-    throw new Error('Remove this statement and implement this function');
+  equals(clock) {
+    return this.toString() === clock.toString();
   }
 
  rollOverHour(hour) {
-    const rolledHour = hour > MIDNIGHT_HOUR ? hour % MIDNIGHT_HOUR : hour;
-    return rolledHour === MIDNIGHT_HOUR ? 0 : rolledHour;
+    const absoluteHour = Math.abs(hour);
+    const extraHour = absoluteHour > MIDNIGHT_HOUR ? absoluteHour % MIDNIGHT_HOUR : absoluteHour;
+    const rolledHour = extraHour === MIDNIGHT_HOUR ? 0 : extraHour;
+
+    return hour < 0 ? MIDNIGHT_HOUR - rolledHour : rolledHour;
   }
 
  rollOverMinutes(minutes) {

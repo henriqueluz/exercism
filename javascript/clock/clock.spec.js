@@ -46,15 +46,15 @@ describe('Clock', () => {
       expect(new Clock(72, 8640).toString()).toEqual('00:00');
     });
 
-    xtest('negative hour', () => {
+    test('negative hour', () => {
       expect(new Clock(-1, 15).toString()).toEqual('23:15');
     });
 
-    xtest('negative hour rolls over', () => {
+    test('negative hour rolls over', () => {
       expect(new Clock(-25, 0).toString()).toEqual('23:00');
     });
 
-    xtest('negative hour rolls over continuously', () => {
+    test('negative hour rolls over continuously', () => {
       expect(new Clock(-91, 0).toString()).toEqual('05:00');
     });
 
@@ -145,27 +145,27 @@ describe('Clock', () => {
     });
 
     describe('Construct two separate clocks, set times, test if they are equal', () => {
-      xtest('clocks with same time', () => {
+      test('clocks with same time', () => {
         expect(new Clock(15, 37).equals(new Clock(15, 37))).toBeTruthy();
       });
 
-      xtest('clocks a minute apart', () => {
+      test('clocks a minute apart', () => {
         expect(new Clock(15, 36).equals(new Clock(15, 37))).toBeFalsy();
       });
 
-      xtest('clocks an hour apart', () => {
+      test('clocks an hour apart', () => {
         expect(new Clock(14, 37).equals(new Clock(15, 37))).toBeFalsy();
       });
 
-      xtest('clocks with hour overflow', () => {
+      test('clocks with hour overflow', () => {
         expect(new Clock(10, 37).equals(new Clock(34, 37))).toBeTruthy();
       });
 
-      xtest('clocks with hour overflow by several days', () => {
+      test('clocks with hour overflow by several days', () => {
         expect(new Clock(3, 11).equals(new Clock(99, 11))).toBeTruthy();
       });
 
-      xtest('clocks with negative hour', () => {
+      test('clocks with negative hour', () => {
         expect(new Clock(22, 40).equals(new Clock(-2, 40))).toBeTruthy();
       });
 
