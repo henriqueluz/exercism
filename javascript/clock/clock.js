@@ -14,7 +14,7 @@ export class Clock {
 
   toString() {
     const padMinutes = this.minutes.toString().padStart(2, '0');
-    const padHour = this.hour.toString().padStart(2, '0');
+    const padHour = this.hour.toString().padStart(2, '0').replace('24', '00');
     return `${padHour}:${padMinutes}`;
   }
 
@@ -23,8 +23,10 @@ export class Clock {
     return this;
   }
 
-  minus() {
-    throw new Error('Remove this statement and implement this function');
+  minus(minutes) {
+    const absoluteMinutes = Math.abs(minutes);
+    this.minutes = this.rollOverMinutes(this.minutes - absoluteMinutes);
+    return this;
   }
 
   equals(clock) {
@@ -34,9 +36,8 @@ export class Clock {
   rollOverHour(hour) {
     const absoluteHour = Math.abs(hour);
     const extraHour = absoluteHour > MIDNIGHT_HOUR ? absoluteHour % MIDNIGHT_HOUR : absoluteHour;
-    const rolledHour = extraHour === MIDNIGHT_HOUR ? 0 : extraHour;
 
-    return hour < 0 ? MIDNIGHT_HOUR - rolledHour : rolledHour;
+    return hour < 0 ? MIDNIGHT_HOUR - extraHour : extraHour;
   }
 
   rollOverMinutes(minutes) {
