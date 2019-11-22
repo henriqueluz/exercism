@@ -44,10 +44,17 @@ const buildMonthCalendar = (lastDayOfMonth, firstWeekDay) => {
   return monthCalendar;
 }
 
-const lookupCalendar = (calendar, weekday, descriptor) => {
+const findDay = (calendar, weekday, descriptor) => {
+  const lastWeeks = calendar.slice(3).flat();
   const weekOfMonth = calendar[WEEK_OF_MONTH[descriptor]];
-  const meetupDay = weekOfMonth.find(week => week["dayOfWeek"] === WEEKDAYS[weekday]);
+  const findDay = week => week["dayOfWeek"] === WEEKDAYS[weekday]
 
+  return descriptor === 'last' ? lastWeeks.reverse().find(findDay) :
+                                  weekOfMonth.find(findDay);
+}
+
+const lookupCalendar = (calendar, weekday, descriptor) => {
+  const meetupDay = findDay(calendar, weekday, descriptor);
   return meetupDay["day"];
 }
 
