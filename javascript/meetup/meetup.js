@@ -44,14 +44,20 @@ const buildMonthCalendar = (lastDayOfMonth, firstWeekDay) => {
   return monthCalendar;
 }
 
+const lookupCalendar = (calendar, weekday, descriptor) => {
+  const weekOfMonth = calendar[WEEK_OF_MONTH[descriptor]];
+  const meetupDay = weekOfMonth.find(week => week["dayOfWeek"] === WEEKDAYS[weekday]);
+
+  return meetupDay["day"];
+}
+
 export const meetupDay = (year, month, weekday, descriptor) =>  {
   const firstDayOfMonth = new Date(year, month, 1);
   const lastDateOfMonth = new Date(year, month + 1, 0);
   const lastDayOfMonth = lastDateOfMonth.getDate();
   const firstWeekDay = firstDayOfMonth.getDay();
   const calendar = buildMonthCalendar(lastDayOfMonth, firstWeekDay);
-  const weekOfMonth = calendar[WEEK_OF_MONTH[descriptor]];
-  const meetupDay = weekOfMonth.find(week => week["dayOfWeek"] === WEEKDAYS[weekday]);
+  const meetupDay = lookupCalendar(calendar, weekday, descriptor);
 
-  return new Date(year, month, meetupDay["day"]);
+  return new Date(year, month, meetupDay);
 }
