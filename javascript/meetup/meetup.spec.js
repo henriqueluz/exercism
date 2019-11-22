@@ -49,7 +49,7 @@ describe('meetupDay()', () => {
     expect(meetupDay(2015, 2, 'Monday', '5th')).toEqual(new Date(2015, 2, 30));
   });
 
-  xtest('test nonexistent fifth monday of february 2015', () => {
+  test('test nonexistent fifth monday of february 2015', () => {
     expect(() => {
       meetupDay(2015, 1, 'Monday', '5th');
     }).toThrow();

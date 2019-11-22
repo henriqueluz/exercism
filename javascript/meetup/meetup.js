@@ -58,6 +58,10 @@ const lookupCalendar = (calendar, weekday, descriptor) => {
   return meetupDay["day"];
 }
 
+const raiseIfDayDoesNotExist = (day) => {
+  if (day === undefined) throw "Nonexistent day.";
+}
+
 export const meetupDay = (year, month, weekday, descriptor) =>  {
   const firstDayOfMonth = new Date(year, month, 1);
   const lastDateOfMonth = new Date(year, month + 1, 0);
@@ -65,6 +69,7 @@ export const meetupDay = (year, month, weekday, descriptor) =>  {
   const firstWeekDay = firstDayOfMonth.getDay();
   const calendar = buildMonthCalendar(lastDayOfMonth, firstWeekDay);
   const meetupDay = lookupCalendar(calendar, weekday, descriptor);
+  raiseIfDayDoesNotExist(meetupDay);
 
   return new Date(year, month, meetupDay);
 }
