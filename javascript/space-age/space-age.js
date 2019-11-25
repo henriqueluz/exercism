@@ -9,7 +9,10 @@ const PLANET_AGES = {
   'mercury' : 0.2408467 * EARTH_RATE,
   'venus' : 0.61519726 * EARTH_RATE,
   'mars' : 1.8808158 * EARTH_RATE,
-  'jupiter' : 11.862615 * EARTH_RATE
+  'jupiter' : 11.862615 * EARTH_RATE,
+  'saturn' : 29.447498 * EARTH_RATE,
+  'uranus' : 84.016846 * EARTH_RATE,
+  'neptune' : 164.7913 * EARTH_RATE
 };
 
 export const age = (planet, timeInSecs) => {
