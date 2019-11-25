@@ -3,19 +3,20 @@
 // convenience to get you started writing code faster.
 //
 
-const EARTH_RATE = 31557600;
+const EARTH_RATE_IN_SECS = 31557600;
 const PLANET_AGES = {
-  'earth' : EARTH_RATE,
-  'mercury' : 0.2408467 * EARTH_RATE,
-  'venus' : 0.61519726 * EARTH_RATE,
-  'mars' : 1.8808158 * EARTH_RATE,
-  'jupiter' : 11.862615 * EARTH_RATE,
-  'saturn' : 29.447498 * EARTH_RATE,
-  'uranus' : 84.016846 * EARTH_RATE,
-  'neptune' : 164.7913 * EARTH_RATE
+  'earth' : 1,
+  'mercury' : 0.2408467,
+  'venus' : 0.61519726,
+  'mars' : 1.8808158,
+  'jupiter' : 11.862615,
+  'saturn' : 29.447498,
+  'uranus' : 84.016846,
+  'neptune' : 164.7913
 };
 
 export const age = (planet, timeInSecs) => {
-  const age = timeInSecs / PLANET_AGES[planet];
+  const planetAgesInSecs = PLANET_AGES[planet] * EARTH_RATE_IN_SECS;
+  const age = timeInSecs / planetAgesInSecs;
   return Number(age.toFixed(2));
 };
