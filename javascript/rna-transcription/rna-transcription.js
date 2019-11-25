@@ -5,6 +5,4 @@
 
 const TRANSCRIPTION = { 'A' : 'U', 'C' : 'G', 'G' : 'C', 'T' : 'A' };
 
-export const toRna = (nucleotides) => {
-  return nucleotides.split('').map(n => TRANSCRIPTION[n]).join('');
-};
+export const toRna = (nucleotides) => [...nucleotides].map(n => TRANSCRIPTION[n]).join('');
