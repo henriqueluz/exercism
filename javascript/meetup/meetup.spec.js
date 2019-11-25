@@ -1,7 +1,7 @@
 import { meetupDay } from './meetup';
 
 describe('meetupDay()', () => {
-  xtest('test monteenth of may 2013', () => {
+  test('test monteenth of may 2013', () => {
     expect(meetupDay(2013, 4, 'Monday', 'teenth')).toEqual(new Date(2013, 4, 13));
   });
 

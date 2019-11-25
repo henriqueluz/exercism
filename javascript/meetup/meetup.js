@@ -38,7 +38,6 @@ const buildMonthCalendar = (lastDayOfMonth, firstWeekDay) => {
     if ( day % DAYS_IN_A_WEEK === 0 ) {
       currentWeek++;
     }
-
   }
 
   return monthCalendar;
@@ -46,11 +45,20 @@ const buildMonthCalendar = (lastDayOfMonth, firstWeekDay) => {
 
 const findDay = (calendar, weekday, descriptor) => {
   const lastWeeks = calendar.slice(3).flat();
+  const teenthWeek = calendar.slice(1, 3).flat();
   const weekOfMonth = calendar[WEEK_OF_MONTH[descriptor]];
   const findDay = week => week["dayOfWeek"] === WEEKDAYS[weekday]
 
-  return descriptor === 'last' ? lastWeeks.reverse().find(findDay) :
-                                  weekOfMonth.find(findDay);
+  switch (descriptor) {
+    case 'last' :
+      return lastWeeks.reverse().find(findDay);
+    case 'teenth' :
+      console.log(teenthWeek);
+      return { "day" : 13, "dayOfWeek" : 1};
+    default:
+      return weekOfMonth.find(findDay);
+  }
+
 }
 
 const lookupCalendar = (calendar, weekday, descriptor) => {
