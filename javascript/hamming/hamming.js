@@ -4,8 +4,11 @@
 //
 
 const raiseIfSizesAreDifferent = (strand, otherStrand) => {
-  raiseIfStrandIsEmpty("left", strand);
-  raiseIfStrandIsEmpty("right", otherStrand);
+  if (strand !== otherStrand) {
+    raiseIfStrandIsEmpty("left", strand);
+    raiseIfStrandIsEmpty("right", otherStrand);
+  }
+
   if (strand.length !== otherStrand.length) {
       throw new Error('left and right strands must be of equal length');
   }
