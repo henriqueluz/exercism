@@ -4,11 +4,6 @@
 //
 
 const raiseIfSizesAreDifferent = (strand, otherStrand) => {
-  if (strand !== otherStrand) {
-    raiseIfStrandIsEmpty("left", strand);
-    raiseIfStrandIsEmpty("right", otherStrand);
-  }
-
   if (strand.length !== otherStrand.length) {
       throw new Error('left and right strands must be of equal length');
   }
@@ -20,6 +15,10 @@ const raiseIfStrandIsEmpty = (strand, sequence) => {
 }
 
 export const compute = (left, right) => {
+  if (left !== right) {
+    raiseIfStrandIsEmpty("left", left);
+    raiseIfStrandIsEmpty("right", right);
+  }
   raiseIfSizesAreDifferent(left, right);
   const strand = [];
   const rightStrand = [...right].reverse();
