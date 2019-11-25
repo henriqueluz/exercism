@@ -53,12 +53,13 @@ const findDay = (calendar, weekday, descriptor) => {
     case 'last' :
       return lastWeeks.reverse().find(findDay);
     case 'teenth' :
-      console.log(teenthWeek);
-      return { "day" : 13, "dayOfWeek" : 1};
+      const findTeenthDay = week => week["dayOfWeek"] === WEEKDAYS[weekday] &&
+                                      week["day"] > 12 &&
+                                      week["day"] < 20;
+      return teenthWeek.find(findTeenthDay);
     default:
       return weekOfMonth.find(findDay);
   }
-
 }
 
 const lookupCalendar = (calendar, weekday, descriptor) => {
