@@ -5,5 +5,6 @@
 
 const ALPHABET = [...'abcdefghijklmnopqrstuvwxyz'];
 export const isPangram = (sentence) => {
-  return ALPHABET.every(letter => sentence.toLowerCase().includes(letter));
+  const lowerCaseSentence = sentence.toLowerCase();
+  return ALPHABET.every(letter => lowerCaseSentence.includes(letter));
 };
