@@ -5,14 +5,14 @@
 
 export const transform = scores => {
   const points = Object.keys(scores);
-  const result = {};
+  const transformation = {};
 
   points.forEach(point => {
     const letters = scores[point];
     letters.forEach(letter => {
-      result[letter.toLowerCase()] = parseInt(point);
+      transformation[letter.toLowerCase()] = parseInt(point);
     });
   });
 
-  return result;
+  return transformation;
 };
