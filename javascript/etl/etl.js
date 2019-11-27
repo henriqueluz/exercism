@@ -4,9 +4,10 @@
 //
 
 export const transform = scores => {
-  const onePoint = scores[1];
-  const sym = onePoint[0].toLowerCase();
+  const points = Object.keys(scores);
+  const onePoint = points[0];
+  const sym = scores[onePoint][0].toLowerCase();
   const result = {};
-  result[sym] = 1;
+  result[sym] = parseInt(onePoint);
   return result;
 };
