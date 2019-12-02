@@ -3,11 +3,11 @@ import { convert } from './raindrops';
 describe('Raindrops', () => {
   test('the sound for 1 is 1', () => expect(convert(1)).toEqual('1'));
 
-  xtest('the sound for 3 is Pling', () => expect(convert(3)).toEqual('Pling'));
+  test('the sound for 3 is Pling', () => expect(convert(3)).toEqual('Pling'));
 
-  xtest('the sound for 5 is Plang', () => expect(convert(5)).toEqual('Plang'));
+  test('the sound for 5 is Plang', () => expect(convert(5)).toEqual('Plang'));
 
-  xtest('the sound for 7 is Plong', () => expect(convert(7)).toEqual('Plong'));
+  test('the sound for 7 is Plong', () => expect(convert(7)).toEqual('Plong'));
 
   xtest('the sound for 6 is Pling as it has a factor 3', () =>
     expect(convert(6)).toEqual('Pling'));

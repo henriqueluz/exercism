@@ -5,14 +5,14 @@
 
 export class Matrix {
   constructor(elements) {
-    
+
   }
 
   get rows() {
-    return [1];
+    return [];
   }
 
   get columns() {
-
+    return [];
   }
 }
