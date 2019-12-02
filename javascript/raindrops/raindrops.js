@@ -4,12 +4,11 @@
 //
 
 const RAINDROPS = {
-  1 : '1',
   3 : 'Pling',
   5 : 'Plang',
   7 : 'Plong'
 };
 
 export const convert = (n) => {
-  return RAINDROPS[n];
+  return RAINDROPS[n] || n.toString();
 };
