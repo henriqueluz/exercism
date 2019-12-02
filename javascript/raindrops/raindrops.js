@@ -9,6 +9,15 @@ const RAINDROPS = {
   7 : 'Plong'
 };
 
+const isFactor = (n, v) => {
+  return n % v === 0;
+}
+
 export const convert = (n) => {
-  return RAINDROPS[n] || n.toString();
+  const raindrops = Object.keys(RAINDROPS).map(k => {
+    if (isFactor(n, k)) return RAINDROPS[k];
+    else return null;
+  }).join('');
+
+  return raindrops || `${n}`;
 };
