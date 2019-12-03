@@ -9,7 +9,7 @@ describe('Scrabble', () => {
     expect(score('A')).toEqual(1);
   });
 
-  xtest('valuable letter', () => {
+  test('valuable letter', () => {
     expect(score('f')).toEqual(4);
   });
 

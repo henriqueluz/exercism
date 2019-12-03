@@ -4,7 +4,8 @@
 //
 
 const PONTUATION = {
-    'a' : 1
+    'a' : 1,
+    'f' : 4
 };
 
 export const score = (input) => {
