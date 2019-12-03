@@ -13,7 +13,7 @@ describe('Scrabble', () => {
     expect(score('f')).toEqual(4);
   });
 
-  xtest('short word', () => {
+  test('short word', () => {
     expect(score('at')).toEqual(2);
   });
 

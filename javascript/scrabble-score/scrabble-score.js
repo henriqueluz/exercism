@@ -3,11 +3,19 @@
 // convenience to get you started writing code faster.
 //
 
-const PONTUATION = {
+const SCORES = {
     'a' : 1,
-    'f' : 4
+    't' : 1,
+    'd' : 2,
+    'b' : 3,
+    'f' : 4,
+    'k' : 5,
+    'j' : 8,
+    'q' : 10
 };
 
 export const score = (input) => {
-  return PONTUATION[input.toLowerCase()];
+  const letters = [...input];
+  return letters.map(letter => SCORES[letter.toLowerCase()])
+                .reduce((acc, score) => acc + score);
 };
