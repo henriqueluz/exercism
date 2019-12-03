@@ -5,7 +5,7 @@ describe('Scrabble', () => {
     expect(score('a')).toEqual(1);
   });
 
-  xtest('uppercase letter', () => {
+  test('uppercase letter', () => {
     expect(score('A')).toEqual(1);
   });
 

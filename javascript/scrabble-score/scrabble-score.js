@@ -3,6 +3,10 @@
 // convenience to get you started writing code faster.
 //
 
+const PONTUATION = {
+    'a' : 1
+};
+
 export const score = (input) => {
-  return 1;
+  return PONTUATION[input.toLowerCase()];
 };
