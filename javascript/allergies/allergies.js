@@ -17,6 +17,6 @@ export class Allergies {
 
   allergicTo(item) {
     const itemScore = ALLERGIES[item];
-    return this.score > itemScore;
+    return this.score === itemScore;
   }
 }
