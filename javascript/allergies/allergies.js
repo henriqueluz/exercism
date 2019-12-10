@@ -29,7 +29,7 @@ export class Allergies {
   }
 
   list() {
-    throw new Error("Remove this statement and implement this function");
+    return this.allergies.reverse();
   }
 
   allergicTo(item) {
