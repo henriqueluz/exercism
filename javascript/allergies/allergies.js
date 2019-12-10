@@ -13,9 +13,10 @@ const ALLERGIES = {
   'pollen' : 64,
   'cats' : 128,
 };
+
 export class Allergies {
   constructor(score) {
-    this.score = score;
+    this.filtered = Object.keys(ALLERGIES).filter(k => ALLERGIES[k] <= score);
   }
 
   list() {
@@ -23,7 +24,6 @@ export class Allergies {
   }
 
   allergicTo(item) {
-    const itemScore = ALLERGIES[item];
-    return this.score === itemScore;
+    return this.filtered.includes(item);
   }
 }
