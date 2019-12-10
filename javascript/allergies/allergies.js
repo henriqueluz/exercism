@@ -16,7 +16,16 @@ const ALLERGIES = {
 
 export class Allergies {
   constructor(score) {
-    this.filtered = Object.keys(ALLERGIES).filter(k => ALLERGIES[k] <= score);
+    this.filtered = Object.keys(ALLERGIES).reverse().filter(k => ALLERGIES[k] <= score);
+    this.allergies = [];
+    let remainingScore = score;
+
+    this.filtered.forEach(allergy => {
+      if (remainingScore >= ALLERGIES[allergy]) {
+        this.allergies.push(allergy);
+        remainingScore = remainingScore - ALLERGIES[allergy];
+      }
+    });
   }
 
   list() {
@@ -24,6 +33,6 @@ export class Allergies {
   }
 
   allergicTo(item) {
-    return this.filtered.includes(item);
+    return this.allergies.includes(item);
   }
 }
