@@ -16,18 +16,19 @@ const ALLERGIES = {
 
 const MAX_SCORE = 256;
 
+const mapAllergies = function(allergy) {
+  if (this.score >= ALLERGIES[allergy]) {
+    this.score -= ALLERGIES[allergy];
+    return allergy;
+  }
+};
+
 export class Allergies {
   constructor(score) {
-    this.filtered = Object.keys(ALLERGIES).reverse().filter(k => ALLERGIES[k] <= score);
-    this.allergies = [];
-    let remainingScore = score >= MAX_SCORE ? score % MAX_SCORE : score;
-
-    this.filtered.forEach(allergy => {
-      if (remainingScore >= ALLERGIES[allergy]) {
-        this.allergies.push(allergy);
-        remainingScore = remainingScore - ALLERGIES[allergy];
-      }
-    });
+    const items = Object.keys(ALLERGIES).reverse();
+    const normalizedScore = score >= MAX_SCORE ? score % MAX_SCORE : score;
+    this.allergies = items.map(mapAllergies, { score: normalizedScore })
+                             .filter(v => v != undefined);
   }
 
   list() {
