@@ -3,10 +3,9 @@
 // convenience to get you started writing code faster.
 //
 
-const nucleotides = ['A', 'C', 'G', 'T'];
-
 export class NucleotideCounts {
   static parse(strand) {
-    return '0 0 0 0';
+    return ['A', 'C', 'G', 'T'].map(n => (strand.match(new RegExp(n, "g")) || []).length)
+                               .join(" ");
   }
 }
