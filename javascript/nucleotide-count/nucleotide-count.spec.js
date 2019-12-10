@@ -17,7 +17,7 @@ describe('count all nucleotides in a strand', () => {
     expect(NucleotideCounts.parse('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')).toEqual('20 12 17 21');
   });
 
-  xtest('strand with invalid nucleotides', () => {
+  test('strand with invalid nucleotides', () => {
     expect(() => NucleotideCounts.parse('AGXXACT')).toThrow(new Error('Invalid nucleotide in strand'));
   });
 });
