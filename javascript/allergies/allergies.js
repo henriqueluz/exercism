@@ -20,7 +20,7 @@ export class Allergies {
   constructor(score) {
     this.filtered = Object.keys(ALLERGIES).reverse().filter(k => ALLERGIES[k] <= score);
     this.allergies = [];
-    let remainingScore = score >= 256 ? score % MAX_SCORE : score;
+    let remainingScore = score >= MAX_SCORE ? score % MAX_SCORE : score;
 
     this.filtered.forEach(allergy => {
       if (remainingScore >= ALLERGIES[allergy]) {
