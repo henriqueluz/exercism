@@ -273,7 +273,7 @@ describe('Allergies', () => {
       ]);
     });
 
-    xtest('no allergen score parts', () => {
+    test('no allergen score parts', () => {
       const allergies = new Allergies(509);
       expect(allergies.list()).toEqual([
         'eggs',

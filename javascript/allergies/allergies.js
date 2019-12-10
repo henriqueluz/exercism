@@ -14,11 +14,13 @@ const ALLERGIES = {
   'cats' : 128,
 };
 
+const MAX_SCORE = 256;
+
 export class Allergies {
   constructor(score) {
     this.filtered = Object.keys(ALLERGIES).reverse().filter(k => ALLERGIES[k] <= score);
     this.allergies = [];
-    let remainingScore = score;
+    let remainingScore = score >= 256 ? score - MAX_SCORE : score;
 
     this.filtered.forEach(allergy => {
       if (remainingScore >= ALLERGIES[allergy]) {
