@@ -6,7 +6,7 @@
 const ALLERGIES = {
   'eggs' : 1,
   'peanuts' : 2,
-  'sellfish' : 4,
+  'shellfish' : 4,
   'strawberries' : 8,
   'tomatoes' : 16,
   'chocolate' : 32,
