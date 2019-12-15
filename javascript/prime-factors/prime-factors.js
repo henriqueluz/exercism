@@ -5,7 +5,7 @@
 
 const isPrime = n => {
   if (n > 1) {
-    for (let i = 3; i < n; i++) {
+    for (let i = 2; i < n; i++) {
       if (n % i === 0) return false;
     }
     return true;
@@ -19,7 +19,7 @@ export const primeFactors = number => {
   for (let i = 2; i <= number; i++) {
     if (isPrime(i)) primes.push(i);
   }
-
+  
   const factors = primes.filter(prime => number % prime === 0);
 
   return factors;
