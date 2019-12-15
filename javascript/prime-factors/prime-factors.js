@@ -14,9 +14,13 @@ const isPrime = n => {
 };
 
 export const primeFactors = number => {
-  const factors = [];
+  const primes = [];
+
   for (let i = 2; i <= number; i++) {
-    if (number % i === 0 && isPrime(i)) factors.push(i);
+    if (isPrime(i)) primes.push(i);
   }
+
+  const factors = primes.filter(prime => number % prime === 0);
+
   return factors;
 };
