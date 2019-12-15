@@ -19,8 +19,20 @@ export const primeFactors = number => {
   for (let i = 2; i <= number; i++) {
     if (isPrime(i)) primes.push(i);
   }
-  
-  const factors = primes.filter(prime => number % prime === 0);
+
+  const factors = [];
+  let result = number;
+  let i = 0;
+
+  while (result > 1) {
+    const prime = primes[i];
+    if (result % prime == 0) {
+      result = result / prime;
+      factors.push(prime);
+    } else {
+      i++;
+    }
+  }
 
   return factors;
 };
