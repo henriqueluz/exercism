@@ -4,8 +4,9 @@
 //
 
 const isPrime = n => {
+  const max = Math.ceil(Math.sqrt(n));
   if (n > 1) {
-    for (let i = 2; i < n; i++) {
+    for (let i = 2; i < max; i++) {
       if (n % i === 0) return false;
     }
     return true;
