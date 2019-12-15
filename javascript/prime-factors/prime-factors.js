@@ -14,21 +14,14 @@ const isPrime = n => {
 };
 
 export const primeFactors = number => {
-  const primes = [];
-
-  for (let i = 2; i <= number; i++) {
-    if (isPrime(i)) primes.push(i);
-  }
-
   const factors = [];
   let result = number;
-  let i = 0;
+  let i = 2
 
   while (result > 1) {
-    const prime = primes[i];
-    if (result % prime == 0) {
-      result = result / prime;
-      factors.push(prime);
+    if (isPrime(i) && result % i == 0) {
+      result = result / i;
+      factors.push(i);
     } else {
       i++;
     }
