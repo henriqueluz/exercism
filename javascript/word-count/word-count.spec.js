@@ -65,7 +65,7 @@ describe('countWords', () => {
     expect(countWords('testing, 1, 2 testing')).toEqual(expectedCounts);
   });
 
-  xtest('normalize case', () => {
+  test('normalize case', () => {
     const expectedCounts = {
       go: 3,
       stop: 2
