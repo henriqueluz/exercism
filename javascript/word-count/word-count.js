@@ -4,7 +4,16 @@
 //
 
 export const countWords = (text) => {
+  const tokens = text.split(" ");
   const occurrences = {};
-  occurrences[text] = 1;
+
+  tokens.forEach(token => {
+    if (occurrences[token] === undefined) {
+      occurrences[token] = 1;
+    } else {
+      occurrences[token] += 1;
+    }
+  });
+
   return occurrences;
 };
