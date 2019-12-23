@@ -25,7 +25,7 @@ describe('countWords', () => {
     );
   });
 
-  xtest('handles cramped lists', () => {
+  test('handles cramped lists', () => {
     const expectedCounts = {
       one: 1,
       two: 1,
