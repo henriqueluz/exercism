@@ -4,7 +4,7 @@
 //
 
 export const countWords = (text) => {
-  const tokens = text.replace(/,/g, " ").replace("\n", " ").split(" ");
+  const tokens = text.replace(/,/g, " ").replace(/\n/g, "").split(" ");
   const occurrences = {};
 
   tokens.forEach(token => {

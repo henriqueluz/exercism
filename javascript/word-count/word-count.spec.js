@@ -34,7 +34,7 @@ describe('countWords', () => {
     expect(countWords('one,two,three')).toEqual(expectedCounts);
   });
 
-  xtest('handles expanded lists', () => {
+  test('handles expanded lists', () => {
     const expectedCounts = {
       one: 1,
       two: 1,
