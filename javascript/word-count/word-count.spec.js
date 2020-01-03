@@ -43,7 +43,7 @@ describe('countWords', () => {
     expect(countWords('one,\ntwo,\nthree')).toEqual(expectedCounts);
   });
 
-  xtest('ignore punctuation', () => {
+  test('ignore punctuation', () => {
     const expectedCounts = {
       car: 1,
       carpet: 1,
