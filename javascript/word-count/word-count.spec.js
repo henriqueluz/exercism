@@ -116,7 +116,7 @@ describe('countWords', () => {
     );
   });
 
-  xtest('multiple spaces not detected as a word', () => {
+  test('multiple spaces not detected as a word', () => {
     const expectedCounts = {
       multiple: 1,
       whitespaces: 1

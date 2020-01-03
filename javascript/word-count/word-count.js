@@ -7,7 +7,8 @@ export const countWords = (text) => {
   const tokens = text.toLowerCase()
                       .replace(/[.:@$%^&!?\\-]/g, "")
                       .replace(/,/g, " ")
-                      .replace(/\n/g, "").split(" ");
+                      .replace(/\n/g, "")
+                      .split(" ");
   const occurrences = {};
 
   tokens.forEach(token => {
@@ -17,6 +18,8 @@ export const countWords = (text) => {
       occurrences[token] += 1;
     }
   });
+
+  delete occurrences[""];
 
   return occurrences;
 };
