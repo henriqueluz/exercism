@@ -56,7 +56,7 @@ describe('countWords', () => {
     );
   });
 
-  xtest('include numbers', () => {
+  test('include numbers', () => {
     const expectedCounts = {
       testing: 2,
       '1': 1,
@@ -100,7 +100,7 @@ describe('countWords', () => {
     );
   });
 
-  xtest('substrings from the beginning', () => {
+  test('substrings from the beginning', () => {
     const expectedCounts = {
       joe: 1,
       'can\'t': 1,
