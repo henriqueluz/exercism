@@ -73,7 +73,7 @@ describe('countWords', () => {
     expect(countWords('go Go GO Stop stop')).toEqual(expectedCounts);
   });
 
-  xtest('with apostrophes', () => {
+  test('with apostrophes', () => {
     const expectedCounts = {
       first: 1,
       'don\'t': 2,
