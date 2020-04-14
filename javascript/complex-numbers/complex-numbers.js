@@ -30,7 +30,9 @@ export class ComplexNumber {
   }
 
   div(value) {
-    throw new Error("Remove this statement and implement this function");
+    const real = (this._real * value.real + this._imag * value.imag) / (value.real**2 + value.imag**2);
+    const imag = (this._imag * value.real - this._real * value.imag) / (value.real**2 + value.imag**2);
+    return new ComplexNumber(real, imag);
   }
 
   mul(value) {
@@ -39,8 +41,8 @@ export class ComplexNumber {
     return new ComplexNumber(real, imag);
   }
 
-  abs() {
-    throw new Error("Remove this statement and implement this function");
+  get abs() {
+    return Math.sqrt(this._real**2 + this._imag**2);
   }
 
   conj() {

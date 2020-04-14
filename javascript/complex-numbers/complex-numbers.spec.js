@@ -113,56 +113,56 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('Divide purely real numbers', () => {
+  test('Divide purely real numbers', () => {
     const expected = new ComplexNumber(0.5, 0);
     const actual = new ComplexNumber(1, 0).div(new ComplexNumber(2, 0));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Divide purely imaginary numbers', () => {
+  test('Divide purely imaginary numbers', () => {
     const expected = new ComplexNumber(0.5, 0);
     const actual = new ComplexNumber(0, 1).div(new ComplexNumber(0, 2));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Divide numbers with real and imaginary part', () => {
+  test('Divide numbers with real and imaginary part', () => {
     const expected = new ComplexNumber(0.44, 0.08);
     const actual = new ComplexNumber(1, 2).div(new ComplexNumber(3, 4));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Absolute value of a positive purely real number', () => {
+  test('Absolute value of a positive purely real number', () => {
     const expected = 5;
     const actual = new ComplexNumber(5, 0).abs;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Absolute value of a negative purely real number', () => {
+  test('Absolute value of a negative purely real number', () => {
     const expected = 5;
     const actual = new ComplexNumber(-5, 0).abs;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Absolute value of a purely imaginary number with positive imaginary part', () => {
+  test('Absolute value of a purely imaginary number with positive imaginary part', () => {
     const expected = 5;
     const actual = new ComplexNumber(0, 5).abs;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Absolute value of a purely imaginary number with negative imaginary part', () => {
+  test('Absolute value of a purely imaginary number with negative imaginary part', () => {
     const expected = 5;
     const actual = new ComplexNumber(0, -5).abs;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Absolute value of a number with real and imaginary part', () => {
+  test('Absolute value of a number with real and imaginary part', () => {
     const expected = 5;
     const actual = new ComplexNumber(3, 4).abs;
 
