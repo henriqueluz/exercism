@@ -85,28 +85,28 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('Multiply purely real numbers', () => {
+  test('Multiply purely real numbers', () => {
     const expected = new ComplexNumber(2, 0);
     const actual = new ComplexNumber(1, 0).mul(new ComplexNumber(2, 0));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Multiply imaginary unit', () => {
+  test('Multiply imaginary unit', () => {
     const expected = new ComplexNumber(-1, 0);
     const actual = new ComplexNumber(0, 1).mul(new ComplexNumber(0, 1));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Multiply purely imaginary numbers', () => {
+  test('Multiply purely imaginary numbers', () => {
     const expected = new ComplexNumber(-2, 0);
     const actual = new ComplexNumber(0, 1).mul(new ComplexNumber(0, 2));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Multiply numbers with real and imaginary part', () => {
+  test('Multiply numbers with real and imaginary part', () => {
     const expected = new ComplexNumber(-5, 10);
     const actual = new ComplexNumber(1, 2).mul(new ComplexNumber(3, 4));
 

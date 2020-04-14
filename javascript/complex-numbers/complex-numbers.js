@@ -18,15 +18,15 @@ export class ComplexNumber {
   }
 
   add(value) {
-    this._real += value.real;
-    this._imag += value.imag;
-    return this;
+    const real = this._real + value.real;
+    const imag = this._imag + value.imag;
+    return new ComplexNumber(real, imag);
   }
 
   sub(value) {
-    this._real -= value.real;
-    this._imag -= value.imag;
-    return this;
+    const real = this._real - value.real;
+    const imag = this._imag - value.imag;
+    return new ComplexNumber(real, imag);
   }
 
   div(value) {
@@ -34,7 +34,9 @@ export class ComplexNumber {
   }
 
   mul(value) {
-    throw new Error("Remove this statement and implement this function");
+    const real = this._real * value.real - this._imag * value.imag;
+    const imag = this._imag * value.real + this._real * value.imag;
+    return new ComplexNumber(real, imag);
   }
 
   abs() {
