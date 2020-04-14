@@ -45,11 +45,11 @@ export class ComplexNumber {
     return Math.sqrt(this._real**2 + this._imag**2);
   }
 
-  conj() {
-    throw new Error("Remove this statement and implement this function");
+  get conj() {
+    return new ComplexNumber(this._real, -this._imag);
   }
 
-  exp() {
+  get exp() {
     throw new Error("Remove this statement and implement this function");
   }
 }

@@ -176,14 +176,14 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('Conjugate a purely imaginary number', () => {
+  test('Conjugate a purely imaginary number', () => {
     const expected = new ComplexNumber(0, -5);
     const actual = new ComplexNumber(0, 5).conj;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Conjugate a number with real and imaginary part', () => {
+  test('Conjugate a number with real and imaginary part', () => {
     const expected = new ComplexNumber(1, -1);
     const actual = new ComplexNumber(1, 1).conj;
 
