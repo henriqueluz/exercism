@@ -169,7 +169,7 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('Conjugate a purely real number', () => {
+  test('Conjugate a purely real number', () => {
     const expected = new ComplexNumber(5, 0);
     const actual = new ComplexNumber(5, 0).conj;
 
@@ -190,7 +190,7 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('Euler\'s identity/formula', () => {
+  test('Euler\'s identity/formula', () => {
     const expected = new ComplexNumber(-1, 0);
     const actual = new ComplexNumber(0, Math.PI).exp;
 
@@ -198,7 +198,7 @@ describe('Complex numbers', () => {
     expect(actual.imag).toBeCloseTo(expected.imag);
   });
 
-  xtest('Exponential of 0', () => {
+  test('Exponential of 0', () => {
     const expected = new ComplexNumber(1, 0);
     const actual = new ComplexNumber(0, 0).exp;
 
@@ -206,7 +206,7 @@ describe('Complex numbers', () => {
     expect(actual.imag).toBeCloseTo(expected.imag);
   });
 
-  xtest('Exponential of a purely real number', () => {
+  test('Exponential of a purely real number', () => {
     const expected = new ComplexNumber(Math.E, 0);
     const actual = new ComplexNumber(1, 0).exp;
 
@@ -214,7 +214,7 @@ describe('Complex numbers', () => {
     expect(actual.imag).toBeCloseTo(expected.imag);
   });
 
-  xtest('Exponential of a number with real and imaginary part', () => {
+  test('Exponential of a number with real and imaginary part', () => {
     const expected = new ComplexNumber(-2, 0);
     const actual = new ComplexNumber(Math.LN2, Math.PI).exp;
 

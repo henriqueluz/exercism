@@ -46,10 +46,13 @@ export class ComplexNumber {
   }
 
   get conj() {
-    return new ComplexNumber(this._real, -this._imag);
+    const imag = this._imag !== 0 ? -this._imag : 0;
+    return new ComplexNumber(this._real, imag);
   }
 
   get exp() {
-    throw new Error("Remove this statement and implement this function");
+    const a = new ComplexNumber(Math.E ** this._real, 0);
+    const b = new ComplexNumber(Math.cos(this._imag), Math.sin(this._imag));
+    return a.mul(b);
   }
 }
