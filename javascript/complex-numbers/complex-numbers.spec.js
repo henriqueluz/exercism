@@ -8,35 +8,35 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('Real part of a purely imaginary number', () => {
+  test('Real part of a purely imaginary number', () => {
     const expected = 0;
     const actual = new ComplexNumber(0, 1).real;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Real part of a number with real and imaginary part', () => {
+  test('Real part of a number with real and imaginary part', () => {
     const expected = 1;
     const actual = new ComplexNumber(1, 2).real;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Imaginary part of a purely real number', () => {
+  test('Imaginary part of a purely real number', () => {
     const expected = 0;
     const actual = new ComplexNumber(1, 0).imag;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Imaginary part of a purely imaginary number', () => {
+  test('Imaginary part of a purely imaginary number', () => {
     const expected = 1;
     const actual = new ComplexNumber(0, 1).imag;
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Imaginary part of a number with real and imaginary part', () => {
+  test('Imaginary part of a number with real and imaginary part', () => {
     const expected = 2;
     const actual = new ComplexNumber(1, 2).imag;
 

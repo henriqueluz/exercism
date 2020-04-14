@@ -4,16 +4,17 @@
 //
 
 export class ComplexNumber {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(a, b) {
+    this._real = a;
+    this._imag = b;
   }
 
   get real() {
-    throw new Error("Remove this statement and implement this function");
+    return this._real;
   }
 
   get imag() {
-    throw new Error("Remove this statement and implement this function");
+    return this._imag;
   }
 
   add() {
