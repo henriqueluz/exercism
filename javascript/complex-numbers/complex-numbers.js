@@ -17,19 +17,23 @@ export class ComplexNumber {
     return this._imag;
   }
 
-  add() {
+  add(value) {
+    this._real += value.real;
+    this._imag += value.imag;
+    return this;
+  }
+
+  sub(value) {
+    this._real -= value.real;
+    this._imag -= value.imag;
+    return this;
+  }
+
+  div(value) {
     throw new Error("Remove this statement and implement this function");
   }
 
-  sub() {
-    throw new Error("Remove this statement and implement this function");
-  }
-
-  div() {
-    throw new Error("Remove this statement and implement this function");
-  }
-
-  mul() {
+  mul(value) {
     throw new Error("Remove this statement and implement this function");
   }
 

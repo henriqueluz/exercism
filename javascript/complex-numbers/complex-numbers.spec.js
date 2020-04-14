@@ -43,42 +43,42 @@ describe('Complex numbers', () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest('Add purely real numbers', () => {
+  test('Add purely real numbers', () => {
     const expected = new ComplexNumber(3, 0);
     const actual = new ComplexNumber(1, 0).add(new ComplexNumber(2, 0));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Add purely imaginary numbers', () => {
+  test('Add purely imaginary numbers', () => {
     const expected = new ComplexNumber(0, 3);
     const actual = new ComplexNumber(0, 1).add(new ComplexNumber(0, 2));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Add numbers with real and imaginary part', () => {
+  test('Add numbers with real and imaginary part', () => {
     const expected = new ComplexNumber(4, 6);
     const actual = new ComplexNumber(1, 2).add(new ComplexNumber(3, 4));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Subtract purely real numbers', () => {
+  test('Subtract purely real numbers', () => {
     const expected = new ComplexNumber(-1, 0);
     const actual = new ComplexNumber(1, 0).sub(new ComplexNumber(2, 0));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Subtract purely imaginary numbers', () => {
+  test('Subtract purely imaginary numbers', () => {
     const expected = new ComplexNumber(0, -1);
     const actual = new ComplexNumber(0, 1).sub(new ComplexNumber(0, 2));
 
     expect(actual).toEqual(expected);
   });
 
-  xtest('Subtract numbers with real and imaginary part', () => {
+  test('Subtract numbers with real and imaginary part', () => {
     const expected = new ComplexNumber(-2, -2);
     const actual = new ComplexNumber(1, 2).sub(new ComplexNumber(3, 4));
 
