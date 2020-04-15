@@ -26,9 +26,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: npm install --loglevel verbose
-      working-directory: exercism/javascript/
+      working-directory: javascript
     - name: Run whole test suite
       run: npm test
-      working-directory: /exercism/javascript/
+      working-directory: javascript
       env:
         CI: true
