@@ -9,12 +9,12 @@ export const countWords = (text) => {
                       .replace(/,/g, " ")
                       .replace(/\n/g, "")
                       .replace(/\'\w+\'/g, x => x.replace(/'/g, ""))
-                      .split(" ");
+                      .trim()
+                      .split(/\s+/);
   const occurrences = [...tokens].reduce((e, i) => {
     e[i] = e[i] ? e[i] + 1 : 1;
     return e;
   }, {});
 
-  delete occurrences[""];
   return occurrences;
 };
