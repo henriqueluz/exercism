@@ -9,17 +9,11 @@ export const countWords = (text) => {
                       .replace(/,/g, " ")
                       .replace(/\n/g, "")
                       .split(" ");
-  const occurrences = {};
-
-  tokens.forEach(token => {
-    if (occurrences[token] === undefined) {
-      occurrences[token] = 1;
-    } else {
-      occurrences[token] += 1;
-    }
-  });
+  const occurrences = [...tokens].reduce((e, i) => {
+    e[i] = e[i] ? e[i] + 1 : 1;
+    return e;
+  }, {});
 
   delete occurrences[""];
-
   return occurrences;
 };
