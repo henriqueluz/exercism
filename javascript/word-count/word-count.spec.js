@@ -86,7 +86,7 @@ describe('countWords', () => {
     );
   });
 
-  xtest('with quotations', () => {
+  test('with quotations', () => {
     const expectedCounts = {
       joe: 1,
       'can\'t': 1,
@@ -124,7 +124,7 @@ describe('countWords', () => {
     expect(countWords(' multiple   whitespaces')).toEqual(expectedCounts);
   });
 
-  xtest('alternating word separators not detected as a word', () => {
+  test('alternating word separators not detected as a word', () => {
     const expectedCounts = {
       one: 1,
       two: 1,
